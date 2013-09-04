@@ -41,6 +41,6 @@ with open('GeneralPollingPlacesDownload-15508.csv') as csvfile:
         if idx != 0:
             ids_dict[int(row[3])] = ' '.join(row[5:-2])
 
-print "Polling Station Name, Voter Turnout, Address"
-for e in sorted_best:
-    print e[0].replace('_', ' ')+", "+str(e[1])+", "+ids_dict[polls_dict[e[0]]]
+print "Rank, Polling Station Name, Voter Turnout, Address"
+for idx, e in enumerate(sorted_best):
+    print str(idx+1)+", "+e[0].replace('_', ' ')+", "+str(e[1])+", "+ids_dict[polls_dict[e[0]]]
